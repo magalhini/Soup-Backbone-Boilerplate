@@ -6,8 +6,14 @@ define([
 
     var initialize = function () {
 
-        // Set a close() method on every view.
+        /*
+         * Implements a dispose method on every view.
+         */
         Backbone.View.prototype.close = function () {
+            // Check if the view has its own dispose method first
+            if (this.onClose) {
+                this.onClose();
+            }
             this.off();
             this.remove();
         };

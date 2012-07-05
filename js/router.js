@@ -24,10 +24,11 @@ define([
        /* Method on which to call new views.
         * The close() method takes care of disposing the current view.
         *
-        * {view}  The View to insert.
-        * {where} The name of the DOM element on which to insert the view.
+        * {view}   [View]    The View to insert.
+        * {where}  [String]  The name of the DOM element on which to insert the view.
+        * {append} [Boolean] Append to the {where} element instead of reple.
         */
-        showView: function (view, where) {
+        showView: function (view, where, append) {
             if (!view || !where) {
                 throw new Error('Missing an element on showView method.');
             }
@@ -37,8 +38,12 @@ define([
                 this.currentView.close();
             }
 
-            $(where).html(view.render().el);
-            this.currentView = view;
+            if (append !== true) {
+                $(where).html(view.render().el);
+                this.currentView = view;
+            } else {
+                $(where).append(view.render().el);
+            }
 
             return view;
         }
