@@ -1,9 +1,8 @@
 define([
     'jquery',
     'underscore',
-    'Backbone',
-    'views/sampleView'
-], function ($, _, Backbone, SampleView) {
+    'Backbone'
+], function ($, _, Backbone) {
 
     var AppRouter = Backbone.Router.extend({
 
@@ -16,8 +15,13 @@ define([
         // Example view.
         home: function () {
             if (!this.sampleView) {
-                this.sampleView = new SampleView();
-                this.showView(this.sampleView, '.container'); // Call common method to initialize it and render it.
+                require([
+                    'require',
+                    'views/sampleView'
+                ], _.bind(function (require, SampleView) {
+                    this.sampleView = new SampleView();
+                    this.showView(this.sampleView, '.container');
+                }, this));
             }
         },
 
