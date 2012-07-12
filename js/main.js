@@ -6,7 +6,7 @@ require.config({
         Backbone: 'libs/backbone',
         text: 'libs/text',
         order: 'libs/order',
-        templates: '../templates'
+        templates: '../templates' // A shortcut
     },
     // Backbone should only be loaded after its dependencies
     shim: {
@@ -14,7 +14,10 @@ require.config({
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         }
-    }
+    },
+    // This prevents the annoying caching while developing.
+    // Warning: you should remove this when switching to production!
+    urlArgs : 'bust=?' + (+ new Date())
 });
 
 // Start the application

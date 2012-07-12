@@ -13,16 +13,17 @@ define([
         },
 
         // Example view.
+        // Verify if it exists first, then call our show method to render it.
         home: function () {
-            if (!this.sampleView) {
-                require([
-                    'require',
-                    'views/sampleView'
-                ], _.bind(function (require, SampleView) {
+            require([
+                'require',
+                'views/sampleView'
+            ], _.bind(function (require, SampleView) {
+                if (!this.sampleView) {
                     this.sampleView = new SampleView();
-                    this.showView(this.sampleView, '.container');
-                }, this));
-            }
+                }
+                this.showView(this.sampleView, '.container');
+            }, this));
         },
 
        /* Method on which to call new views.
@@ -30,7 +31,7 @@ define([
         *
         * {view}   [View]    The View to insert.
         * {where}  [String]  The name of the DOM element on which to insert the view.
-        * {append} [Boolean] Append to the {where} element instead of reple.
+        * {append} [Boolean] Append to the {where} element instead of replace.
         */
         showView: function (view, where, append) {
             if (!view || !where) {
