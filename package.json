@@ -1,0 +1,35 @@
+{
+    "name": "Portfolio",
+    "description": "Ricardo Magalhães Webfolio",
+    "version": "0.1.0",
+    "homepage": "",
+    "author": {
+        "name": "Ricardo Magalhães",
+        "email": "hello@ricardofilipe.com",
+        "url": "http://www.ricardofilipe.com"
+    },
+    "licenses": [
+        {
+        "type": "MIT"
+    }
+    ],
+    "main": "index.html",
+    "engines": {
+        "node": "*"
+    },
+    "scripts": {
+        "test": "grunt min"
+    },
+    "devDependencies": {
+        "grunt": "~0.3.11",
+        "grunt-requirejs": "~0.2.13",
+        "grunt-yui-compressor": "~0.1.1",
+        "grunt-replace": "~0.1.4",
+        "grunt-shell": "~0.1.2",
+        "grunt-smushit": "~0.2.1",
+        "jsdom": "~0.2.14",
+        "xmlhttprequest": "~1.4.2"
+    },
+    "private": false,
+    "keywords": []
+}
