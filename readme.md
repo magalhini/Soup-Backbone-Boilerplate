@@ -21,8 +21,8 @@ Soon.
 
 ### Usage ###
 
-Fow now, simply download, and extract.
-You may delete the sample instantiated View on the router.js file.
+For now, simply download and extract.
+You may delete the sample instantiated View on the router.js file, as well as the model and collection files.
 
 To build using grunt, install its dependencies by running "grunt install" and then run the pre-defined tasks
 inside the grunt.js file. 'build' and 'compile' were already written for you, so check them out.
@@ -32,7 +32,7 @@ inside the grunt.js file. 'build' and 'compile' were already written for you, so
 [tbranyen](https://github.com/tbranyen) & [ccoenraets](https://github.com/ccoenraets/) for the best practices.
 
 ### Log ###
-03 Nov 2012: Added support for grunt.js.
-15 Aug 2012: Added default router triggering event.
-10 Jul 2012: Fix router View helper method to allow append.
-3 Jul 2012: First version.
+    - 03 Nov 2012: Added support for grunt.js.
+    - 15 Aug 2012: Added default router triggering event.
+    - 10 Jul 2012: Fix router View helper method to allow append.
+    - 3 Jul 2012: First version.
